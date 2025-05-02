@@ -1,0 +1,84 @@
+#
+# These things are run when an Openbox X Session is started.
+# You may place a similar script in $HOME/.config/openbox/autostart
+# to run user-specific things.
+#
+
+# If you want to use GNOME config tools...
+#
+#if test -x /usr/lib/x86_64-linux-gnu/gnome-settings-daemon >/dev/null; then
+#  /usr/lib/x86_64-linux-gnu/gnome-settings-daemon &
+#elif which gnome-settings-daemon >/dev/null 2>&1; then
+#  gnome-settings-daemon &
+#fi
+
+# If you want to use XFCE config tools...
+#
+#xfce-mcs-manager &
+
+# Sistema de Sonido PulseAudio
+# Iniciar el Sistema de Sonido PulseAudio
+pulseaudio --start &
+
+# Internet
+nm-applet &
+
+# Iniciar polkit (autenticación LXQT) para programas que necesitan aumentar los permisos, como synaptic, Discover, Muon, etc
+lxqt-policykit-agent &
+
+
+
+# Iniciar programas como aplicaciones KDE (kate, dolphin, konsole)
+kate &
+dolphin &
+konsole &
+pcmanfm-qt &
+
+# Otros programas (en este caso, algunos comentados)
+
+# Navegadores Web:
+# /usr/bin/google-chrome-stable &
+firefox &
+
+# Activador de las teclas numeral de los teclados:
+numlockx &
+
+# Captura de pantalla:
+ksnip &
+
+# Panel para las aplicaciones:
+tint2 &
+
+# Compositor
+picom &
+
+# Si tienes un teclado Logitech Pebble Keys necesitarás este programa
+#solaar --window=hide
+
+# Icono del volumen (con clic derecho se abre pavucontrol):
+volumeicon &
+
+# Gestor de los Wallpapaer
+nitrogen --restore &
+
+# Un programa personal:
+python3 /home/wachin/Dev/xsct_gui/xsct_gui.py &
+
+# Icono de estado de batería ligero y rápido, y más
+cbatticon &
+
+# Notas
+xfce4-notes &
+
+# Para asegurarme de que el idioma del teclado esté en "Español España"
+# Pues todos mis teclados son "Español España" aunque yo vivo en Ecuador
+# Si usted necesitara saber qué teclado se está usando ponga: setxkbmap -query
+setxkbmap -layout es &
+
+# Habilitar notificaciones del paquete xfce4-notifyd (ponerlo al final del archivo porque sino usas Systemd no funciona
+# y no te dejará funcionar los demás programas después de este porque no usa &)
+# Comando encontrado en synapic en /etc/xdg/autostart/xfce4-notifyd.desktop
+# en MX Linux 23 KDE el cual es de 64 bit. Si desee usar esto en un Linux de 32 bit deber ver en el 
+# archvio: xfce4-notifyd.desktop la línea y copiarla y usarla
+sh -c "systemctl --user start xfce4-notifyd.service 2>/dev/null || exec /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd"
+
