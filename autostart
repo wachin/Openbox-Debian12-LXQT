@@ -53,7 +53,7 @@ tint2 &
 picom &
 
 # Si tienes un teclado Logitech Pebble Keys necesitarás este programa
-#solaar --window=hide
+solaar --window=hide
 
 # Icono del volumen (con clic derecho se abre pavucontrol):
 volumeicon &
@@ -81,4 +81,9 @@ setxkbmap -layout es &
 # en MX Linux 23 KDE el cual es de 64 bit. Si desee usar esto en un Linux de 32 bit deber ver en el 
 # archvio: xfce4-notifyd.desktop la línea y copiarla y usarla
 sh -c "systemctl --user start xfce4-notifyd.service 2>/dev/null || exec /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd"
+
+# Notas programa
+feathernotes /home/wachin/Documentos/WachiNotas.fnx &
+
+
 
