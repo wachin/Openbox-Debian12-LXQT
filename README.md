@@ -22,7 +22,8 @@ Instálalo en tu sistema siguiendo las instrucciones estándar de instalación d
 sudo apt install git tint2 picom xfce4-notifyd cbatticon \
     lxappearance lxrandr gnome-icon-theme volumeicon-alsa \
     numlockx nitrogen obconf lxsession-logout \
-    xfce4-notes qt5ct papirus-icon-theme pcmanfm-qt
+    xfce4-notes qt5ct papirus-icon-theme pcmanfm-qt \
+    xfce4-power-manager
 ```
 Si usas MX Linux también puedes instalar los siguientes paquetes que están en sus repositorios:
 
@@ -55,6 +56,7 @@ sudo apt install picom
    - `obconf`: Herramienta para configurar Openbox mediante una interfaz gráfica.
    - `lxsession-logout`: Utilidad para cerrar sesión, apagar o reiniciar el sistema desde Openbox, debe añadirla al panel tint2, abajo dejo un enlace a un tutorial.
    - `cbatticon`: Icono de estado de batería ligero y rápido, y más
+   - `xfce4-power-manager`: Este es el gestor de energía de XFCE (al  instalar sólo este paquete no se instala todo el entorno XFCE), el cual hace lo siguiente: Escucha las teclas especiales (como F11/F12), ajusta el brillo real (intel_backlight) automáticamente (control de brillo real por hardware), muestra incluso notificaciones opcionales del cambio. Sino se instala este paquete es posible en algunas laptops no se pueda ajustar el brillo de la pantalla.
 
 2. Descarga y configura los archivos de Openbox ejecutando:
 ```bash
