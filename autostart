@@ -26,7 +26,11 @@ nm-applet &
 # Iniciar polkit (autenticación LXQT) para programas que necesitan aumentar los permisos, como synaptic, Discover, Muon, etc
 lxqt-policykit-agent &
 
-
+# Este es el gestor de energía de XFCE (al  instalar sólo este paquete no se instala todo el entorno XFCE), 
+# el cual hace lo siguiente: Escucha las teclas especiales (como F11/F12), ajusta el brillo real y otros
+# Sino se instala este paquete es posible en algunas laptops no se pueda ajustar el brillo de la pantalla 
+# con las teclas F que el ordenador tenga asignado
+xfce4-power-manager &
 
 # Iniciar programas como aplicaciones KDE (kate, dolphin, konsole)
 kate &
